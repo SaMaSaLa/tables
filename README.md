@@ -1,9 +1,9 @@
-# Generate Numbers
+# Tables
 
-Adds 2 numbers for a specific number of times and shows a table of the result
+Multiplies a specific number by 1, 2, 3 and all numbers until 10 and gives a table of the result.
 
-- Repository URL : [generate-numbers](https://github.com/SaMaSaLa/generate-numbers)
-- Demo URL : [Demo](https://samasala.github.io/generate-numbers/)
+- Repository URL : [tables](https://github.com/SaMaSaLa/tables)
+- Demo URL : [Demo](https://samasala.github.io/tables/)
 
 Authors:
 

@@ -1,21 +1,14 @@
-let startNumberEl = document.getElementById("start");
-const incrementEl = document.getElementById("incre");
-let countEl = document.getElementById("count");
+const inputVal = document.getElementById("input");
 
-const input = document.getElementById("input");
 
 const generate = document.getElementById("generate");
-const startNumberElConsole = console.log(startNumberEl);
-const incrementElConsole = console.log(incrementEl);
-const countElConsole = console.log(countEl);
-const result = document.getElementById("result");
+const tableDiv = document.getElementById("table");
 
-let startNumber = parseFloat(startNumberEl.value);
-let count = parseFloat(countEl.value);
-let increment = parseFloat(incrementEl.value);
+generate.addEventListener("click", function () {
+    const input = parseInt(inputVal.value, 10);
+    tableDiv.innerHTML = "";
 
-generate.addEventListener("click", () => {
-  /*
+    /*
     <table>
       <thead>
         <tr>
@@ -34,39 +27,44 @@ generate.addEventListener("click", () => {
 
 */
 
-  result.innerText = "";
-  const table = document.createElement("table");
-  result.appendChild(table);
-  const thead = document.createElement("thead");
-  table.appendChild(thead);
-  const tr = document.createElement("tr");
-  thead.appendChild(tr);
-  const tho = document.createElement("th");
-  tho.textContent = "Count";
-  tr.appendChild(tho);
-  const tht = document.createElement("th");
-  tr.appendChild(tht);
-  tht.textContent = "Number";
+    const table = document.createElement("table");
 
-  const tbody = document.createElement("tbody");
-  table.appendChild(tbody);
+    table.classList.add("table");
 
-  table.classList.add("bordered-table");
+    tableDiv.appendChild(table);
 
-  const count = parseInt(countEl.value, 10);
-  const increment = parseInt(incrementEl.value, 10);
-  const startAt = parseInt(startNumberEl.value, 10);
+    const thead = document.createElement("thead");
 
-  for (let i = 0; i < count; i++) {
-    const tr2 = document.createElement("tr");
-    tbody.appendChild(tr2);
+    table.appendChild(thead);
 
-    const tdCount = document.createElement("td");
-    tdCount.textContent = i + 1;
-    tr2.appendChild(tdCount);
+    const tbody = document.createElement("tbody");
 
-    const tdNumber = document.createElement("td");
-    tdNumber.textContent = startAt + increment * i;
-    tr2.appendChild(tdNumber);
-  }
+    table.appendChild(tbody);
+
+
+    for (let i = 1; i <= 10; i++) {
+        let trt = document.createElement("tr");
+        tbody.appendChild(trt);
+
+        let tdo = document.createElement("td");
+        tdo.textContent = input;
+        trt.appendChild(tdo);
+
+        let tdtw = document.createElement("td");
+        tdtw.textContent = "x";
+        trt.appendChild(tdtw);
+
+        let tdth = document.createElement("td");
+        tdth.textContent = i;
+        trt.appendChild(tdth);
+
+        let tdfo = document.createElement("td");
+        tdfo.textContent = "=";
+        trt.appendChild(tdfo);
+
+        let tdfi = document.createElement("td");
+        tdfi.textContent = input * i;
+        trt.appendChild(tdfi);
+    }
+
 });
